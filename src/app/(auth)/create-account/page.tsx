@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Command } from "lucide-react";
 
 import { APP_NAME } from "@/config/appConfig";
