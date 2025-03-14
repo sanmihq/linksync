@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../../app/globals.css";
 import { geistSans } from "../fonts/fonts";
 import { siteConfig } from "../config/site";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -15,7 +16,11 @@ export default function AppLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className} antialiased`}>{children}</body>
+      <body className={`${geistSans.className} antialiased`}>
+        <ClerkProvider>
+          <main>{children}</main>
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
