@@ -4,6 +4,7 @@ import { geistSans } from "../fonts/fonts";
 import { siteConfig } from "../config/site";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./components/Header";
+import { ConvexClientProvider } from "../convexClientProvider";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -19,8 +20,10 @@ export default function AppLayout({
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
         <ClerkProvider>
-          <Header />
-          <main>{children}</main>
+          <ConvexClientProvider>
+            <Header />
+            <main>{children}</main>
+          </ConvexClientProvider>
         </ClerkProvider>
       </body>
     </html>
