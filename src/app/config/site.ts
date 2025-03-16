@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "LinkSync",
   title: "LinkSync - Your Smart Link Hub",
-  url: "https://linksync.com",
+  url: "linksync.com",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
     "Create a personalized profile to showcase and organize all your important links in one place.",
