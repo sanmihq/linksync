@@ -1,7 +1,16 @@
-export default function Home() {
+import React from "react";
+import PageWrapper from "../components/PageWrapper";
+import { siteConfig } from "@/app/config/site";
+
+export default function DashboardPage() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <h1>Welcome to Linksync Dashboard</h1>
-    </div>
+    <PageWrapper title={`My ${siteConfig.name}`}>
+      <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="aspect-video rounded-xl bg-muted/50" />
+      </div>
+      <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+    </PageWrapper>
   );
 }

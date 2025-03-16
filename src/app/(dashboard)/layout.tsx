@@ -1,14 +1,10 @@
+// app/dashboard/layout.tsx
 import "../../app/globals.css";
 import type { Metadata } from "next";
 import { geistSans } from "../fonts/fonts";
 import { siteConfig } from "../config/site";
 
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ConvexClientProvider } from "../convexClientProvider";
 
 export const metadata: Metadata = {
@@ -25,7 +21,9 @@ export default function DashboardLayout({
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
         <ClerkProvider>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <main>{children}</main>
+          </ConvexClientProvider>
         </ClerkProvider>
       </body>
     </html>
